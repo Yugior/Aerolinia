@@ -1,2 +1,0 @@
-Las modificaciones dadas en se hicieron principalmente en el readme, al ser un concepto flojo la forma de descibirlo, tuve que rehacer por completo la problematica y su solución,
-asimismo el diagrama sufrio cambios respecto a las sub clases y sus uniones por composición u herencia. 
