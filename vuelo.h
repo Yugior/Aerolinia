@@ -1,37 +1,35 @@
+// vuelo.h
 #ifndef VUELO_H
 #define VUELO_H
 
+#include <iostream>
 #include <string>
 
 class Vuelo {
 private:
-    std::string piloto;
-    std::string copiloto;
-    std::string fechaSalida;
+    std::string fecha;
     std::string avion;
+    int clase;  
+    double costo;  //  variable para almacenar el costo del asiento
 
 public:
-    // Constructor
     Vuelo();
 
-    // Getter y Setter para Piloto
-    std::string getPiloto() const;
-    void setPiloto(const std::string& piloto);
-
-    // Getter y Setter para Copiloto
-    std::string getCopiloto() const;
-    void setCopiloto(const std::string& copiloto);
-
-    // Getter y Setter para Fecha de salida
-    std::string getFechaSalida() const;
-    void setFechaSalida(const std::string& fechaSalida);
-
-    // Getter y Setter para Avión
+    // Getters
+    std::string getFecha() const;
     std::string getAvion() const;
-    void setAvion(const std::string& avion);
+    int getClase() const;
+    double getCosto() const;  //  getter para obtener el costo del asiento
 
-    // Método que selecciona el vuelo
-    void seleccionarVuelo();
+    // Setters
+    void setFecha(const std::string &fecha);
+    void setAvion(const std::string &avion);
+    void setClase(int clase);
+    void setCosto(double costo);  //  setter para establecer el costo del asiento
+
+    // Métodos adicionales
+    void seleccionaVuelo();
+    void eligeClase();
 };
 
 #endif // VUELO_H
