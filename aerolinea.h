@@ -1,59 +1,34 @@
-// aerolinea.cpp
-#include "aerolinea.h"
+// aerolinea.h
+#ifndef AEROLINEA_H
+#define AEROLINEA_H
 
-Aerolinea::Aerolinea() {
-    // Constructor por defecto
-}
+#include "pasajero.h"
+#include "vuelo.h"
+#include <iostream>
+#include <string>
 
-// Getters
-Pasajero Aerolinea::getPasajero() const {
-    return pasajero;
-}
+class Aerolinea {
+private:
+    Pasajero pasajero;
+    Vuelo vuelo;
+    std::string aerolinea;
 
-Vuelo Aerolinea::getVuelo() const {
-    return vuelo;
-}
+public:
+    Aerolinea();
 
-std::string Aerolinea::getAerolinea() const {
-    return aerolinea;
-}
+    // Getters
+    Pasajero getPasajero() const;
+    Vuelo getVuelo() const;
+    std::string getAerolinea() const;
 
-// Setters
-void Aerolinea::setPasajero(const Pasajero &pasajero) {
-    this->pasajero = pasajero;
-}
+    // Setters
+    void setPasajero(const Pasajero &pasajero);
+    void setVuelo(const Vuelo &vuelo);
+    void setAerolinea(const std::string &aerolinea);
 
-void Aerolinea::setVuelo(const Vuelo &vuelo) {
-    this->vuelo = vuelo;
-}
+    // Método adicional
+    void seleccionaAerolinea();
+};
 
-void Aerolinea::setAerolinea(const std::string &aerolinea) {
-    this->aerolinea = aerolinea;
-}
-
-// Método adicional
-void Aerolinea::seleccionaAerolinea() {
-    std::cout << "Selecciona la aerolínea:\n";
-    std::cout << "1. Alas Amigas\n";
-    std::cout << "2. Volaros\n";
-    std::cout << "3. Amgard\n";
-
-    int opcion;
-    std::cin >> opcion;
-
-    switch (opcion) {
-        case 1:
-            setAerolinea("Alas Amigas");
-            break;
-        case 2:
-            setAerolinea("Volaros");
-            break;
-        case 3:
-            setAerolinea("Amgard");
-            break;
-        default:
-            std::cout << "Opción no válida.\n";
-            break;
-    }
-}
+#endif // AEROLINEA_H
 
