@@ -1,34 +1,28 @@
-// pasajero.cpp
-#include "pasajero.h"
+// pasajero.h
+#ifndef PASAJERO_H
+#define PASAJERO_H
 
-Pasajero::Pasajero() {
-    // Constructor por defecto
-}
+#include <iostream>
+#include <string>
 
-// Getters
-std::string Pasajero::getNombre() const {
-    return nombre;
-}
+class Pasajero {
+private:
+    std::string nombre;
+    std::string telefono;
 
-std::string Pasajero::getTelefono() const {
-    return telefono;
-}
+public:
+    Pasajero();
 
-// Setters
-void Pasajero::setNombre(const std::string &nombre) {
-    this->nombre = nombre;
-}
+    // Getters
+    std::string getNombre() const;
+    std::string getTelefono() const;
 
-void Pasajero::setTelefono(const std::string &telefono) {
-    this->telefono = telefono;
-}
+    // Setters
+    void setNombre(const std::string &nombre);
+    void setTelefono(const std::string &telefono);
 
-// Método adicional
-void Pasajero::registrarPasajero() {
-    std::cout << "Ingrese el nombre del pasajero: ";
-    std::cin.ignore(); // Para evitar problemas con getline después de cin >>
-    std::getline(std::cin, nombre);
+    // Método adicional
+    void registrarPasajero();
+};
 
-    std::cout << "Ingrese el número de teléfono del pasajero: ";
-    std::cin >> telefono;
-}
+#endif // PASAJERO_H
