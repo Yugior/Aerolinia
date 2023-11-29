@@ -1,21 +1,28 @@
-#include "comercial.h"
+// trabajo.h
+#ifndef TRABAJO_H
+#define TRABAJO_H
+
 #include <iostream>
+#include <string>
 
-// Constructor
-Comercial::Comercial() {}
+class Trabajo {
+private:
+    std::string bebida;
+    std::string entretenimiento;
 
-// Getter y Setter para Número de asientos
-int Comercial::getNumAsientos() const {
-    return numAsientos;
-}
+public:
+    Trabajo();
 
-void Comercial::setNumAsientos(int numAsientos) {
-    this->numAsientos = numAsientos;
-}
+    // Getters
+    std::string getBebida() const;
+    std::string getEntretenimiento() const;
 
-// Método para pedir el número de asientos
-void Comercial::pedirNumeroAsientos() {
-    std::cout << "Ingrese el número de asientos para la clase comercial: ";
-    std::cin >> numAsientos;
-    std::cin.ignore();  // Para consumir el carácter de nueva línea dejado por std::cin
-}
+    // Setters
+    void setBebida(const std::string &bebida);
+    void setEntretenimiento(const std::string &entretenimiento);
+
+    // Método adicional
+    void eligeServicios();
+};
+
+#endif // TRABAJO_H
