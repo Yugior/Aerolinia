@@ -1,37 +1,27 @@
+// premier.h
 #ifndef PREMIER_H
 #define PREMIER_H
 
-#include <string>
+#include "trabajo.h"
 
-class Premier {
+class Premier : public Trabajo {
 private:
-    int numAsientos;
-    std::string servicio1;
-    std::string servicio2;
-    std::string servicio3;
+    std::string masaje;
+    std::string comida;
 
 public:
-    // Constructor
     Premier();
 
-    // Getter y Setter para Número de asientos
-    int getNumAsientos() const;
-    void setNumAsientos(int numAsientos);
+    // Getters
+    std::string getMasaje() const;
+    std::string getComida() const;
 
-    // Getter y Setter para Servicio 1
-    std::string getServicio1() const;
-    void setServicio1(const std::string& servicio1);
+    // Setters
+    void setMasaje(const std::string &masaje);
+    void setComida(const std::string &comida);
 
-    // Getter y Setter para Servicio 2
-    std::string getServicio2() const;
-    void setServicio2(const std::string& servicio2);
-
-    // Getter y Setter para Servicio 3
-    std::string getServicio3() const;
-    void setServicio3(const std::string& servicio3);
-
-    // Método para pedir información de asientos y servicios
-    void pedirInformacion();
+    // Método adicional
+    void eligeServiciosPremier();
 };
 
 #endif // PREMIER_H
