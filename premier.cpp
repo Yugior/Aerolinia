@@ -1,57 +1,61 @@
+// premier.cpp
 #include "premier.h"
-#include <iostream>
 
-// Constructor
-Premier::Premier() {}
-
-// Getter y Setter para Número de asientos
-int Premier::getNumAsientos() const {
-    return numAsientos;
+Premier::Premier() {
+    // Constructor por defecto
 }
 
-void Premier::setNumAsientos(int numAsientos) {
-    this->numAsientos = numAsientos;
+// Getters
+std::string Premier::getMasaje() const {
+    return masaje;
 }
 
-// Getter y Setter para Servicio 1
-std::string Premier::getServicio1() const {
-    return servicio1;
+std::string Premier::getComida() const {
+    return comida;
 }
 
-void Premier::setServicio1(const std::string& servicio1) {
-    this->servicio1 = servicio1;
+// Setters
+void Premier::setMasaje(const std::string &masaje) {
+    this->masaje = masaje;
 }
 
-// Getter y Setter para Servicio 2
-std::string Premier::getServicio2() const {
-    return servicio2;
+void Premier::setComida(const std::string &comida) {
+    this->comida = comida;
 }
 
-void Premier::setServicio2(const std::string& servicio2) {
-    this->servicio2 = servicio2;
-}
+// Método adicional
+void Premier::eligeServiciosPremier() {
+    std::cout << "Elige tres de los siguientes servicios Premier:\n";
+    std::cout << "1. Masaje\n";
+    std::cout << "2. Bebida\n";
+    std::cout << "3. Comida\n";
+    std::cout << "4. Entretenimiento\n";
 
-// Getter y Setter para Servicio 3
-std::string Premier::getServicio3() const {
-    return servicio3;
-}
+    for (int i = 0; i < 3; ++i) {
+        int opcion;
+        std::cin >> opcion;
 
-void Premier::setServicio3(const std::string& servicio3) {
-    this->servicio3 = servicio3;
-}
-
-// Método para pedir información de asientos y servicios
-void Premier::pedirInformacion() {
-    std::cout << "Ingrese el número de asientos para la clase Premier: ";
-    std::cin >> numAsientos;
-    std::cin.ignore();  // Para consumir el carácter de nueva línea dejado por std::cin
-
-    std::cout << "Elija el servicio 1 (Bebida, Comida, Masaje, Entretenimiento): ";
-    std::getline(std::cin, servicio1);
-
-    std::cout << "Elija el servicio 2 (Bebida, Comida, Masaje, Entretenimiento): ";
-    std::getline(std::cin, servicio2);
-
-    std::cout << "Elija el servicio 3 (Bebida, Comida, Masaje, Entretenimiento): ";
-    std::getline(std::cin, servicio3);
+        switch (opcion) {
+            case 1:
+                std::cout << "Has elegido el servicio de Masaje.\n";
+                setMasaje("Servicio de Masaje");
+                break;
+            case 2:
+                std::cout << "Has elegido el servicio de Bebida.\n";
+                setBebida("Servicio de Bebida");
+                break;
+            case 3:
+                std::cout << "Has elegido el servicio de Comida.\n";
+                setComida("Servicio de Comida");
+                break;
+            case 4:
+                std::cout << "Has elegido el servicio de Entretenimiento.\n";
+                setEntretenimiento("Servicio de Entretenimiento");
+                break;
+            default:
+                std::cout << "Opción no válida.\n";
+                --i; // Para que el usuario pueda elegir otro servicio.
+                break;
+        }
+    }
 }
