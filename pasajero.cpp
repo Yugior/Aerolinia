@@ -1,43 +1,34 @@
+// pasajero.cpp
 #include "pasajero.h"
-#include <iostream>
 
-// Constructor
-Pasajero::Pasajero() {}
+Pasajero::Pasajero() {
+    // Constructor por defecto
+}
 
-// Getter y Setter para Nombre
+// Getters
 std::string Pasajero::getNombre() const {
     return nombre;
 }
 
-void Pasajero::setNombre(const std::string& nombre) {
-    this->nombre = nombre;
-}
-
-// Getter y Setter para Teléfono
 std::string Pasajero::getTelefono() const {
     return telefono;
 }
 
-void Pasajero::setTelefono(const std::string& telefono) {
+// Setters
+void Pasajero::setNombre(const std::string &nombre) {
+    this->nombre = nombre;
+}
+
+void Pasajero::setTelefono(const std::string &telefono) {
     this->telefono = telefono;
 }
 
-// Getter y Setter para Costo
-Costo Pasajero::getCosto() const {
-    return costo;
-}
-
-void Pasajero::setCosto(const Costo& costo) {
-    this->costo = costo;
-}
-
-// Método para elegir el asiento y tipo de clase
-void Pasajero::elegirAsientoYClase() {
-    // Llamar al método de la subclase Costo para elegir el tipo de clase
-    costo.elegirTipoClase();
-    
-    // Llamar al método de la subclase Pasajero para ingresar nombre y elegir asiento
+// Método adicional
+void Pasajero::registrarPasajero() {
     std::cout << "Ingrese el nombre del pasajero: ";
+    std::cin.ignore(); // Para evitar problemas con getline después de cin >>
     std::getline(std::cin, nombre);
-    costo.elegirTipoClase();
+
+    std::cout << "Ingrese el número de teléfono del pasajero: ";
+    std::cin >> telefono;
 }
