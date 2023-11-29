@@ -1,4 +1,9 @@
 # Aerolinia
+## Propiedades
+El programa creado es para iniciar un registro a travez de un programa compilador en C++, por lo cual para su uso se debera tener un compilador de terminal u aplicación que comprenda dicho lenguaje.
+Asi mismo otro detalle a tener en consideración es el hecho de renombrar los archivos, si descargas varios archivos similares, podria fallar por una confusión en los nombres dentro de la carpeta.
+
+
 ## Caracteristicas
 
 El siguiente codigo usa fuente de C++, por lo cual se debera hacer uso de un compilador que corra docho lenguaje como recomendación. Asi mismo este codigo contiene 15 documentos con lengueaje C++, siendo 7 con enlace .h para las clases, 7 cuyo objetivo es el complementar las clases y un main llamado "Registro"
