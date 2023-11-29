@@ -1,30 +1,33 @@
+// aerolinea.h
 #ifndef AEROLINEA_H
 #define AEROLINEA_H
 
+#include "pasajero.h"
+#include "vuelo.h"
 #include <iostream>
 #include <string>
-#include "vuelo.h"
-#include "pasajero.h"
 
 class Aerolinea {
 private:
     Pasajero pasajero;
     Vuelo vuelo;
+    std::string aerolinea;
 
 public:
-    // Constructor
     Aerolinea();
 
-    // Getter y Setter para Pasajero
+    // Getters
     Pasajero getPasajero() const;
-    void setPasajero(const Pasajero& pasajero);
-
-    // Getter y Setter para Vuelo
     Vuelo getVuelo() const;
-    void setVuelo(const Vuelo& vuelo);
+    std::string getAerolinea() const;
 
-    // Método que pide información de la aerolínea
-    void pedirInformacion();
+    // Setters
+    void setPasajero(const Pasajero &pasajero);
+    void setVuelo(const Vuelo &vuelo);
+    void setAerolinea(const std::string &aerolinea);
+
+    // Método adicional
+    void seleccionaAerolinea();
 };
 
 #endif // AEROLINEA_H
